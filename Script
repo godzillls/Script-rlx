@@ -1,0 +1,56 @@
+
+---@diagnostic disable-next-line: deprecated
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Be Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "sei la",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab{
+	Name = "s"
+}
+
+OrionLib:MakeNotification({
+	Name = "teu pai usa calsinha",
+	Content = "?",
+	Image = "rbxassetid://4483345998",
+	Time = 10
+})
+
+Tab:AddToggle({
+	Name = "Max Script",
+	Default = false,
+	Callback = function(Value)
+
+        ChangeWalkSpeed(game.playes.Pancake1824,  50)
+		print(Value)
+	end    
+})
+
+Tab:AddColorpicker({
+	Name = "escolha a cor",
+---@diagnostic disable-next-line: undefined-global
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+Tab:AddSlider({
+	Name = "Slider",
+	Min = 0,
+	Max = 20,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "bananas",
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+OrionLib:Init()
